@@ -2,7 +2,7 @@
 * @author Charles Allgaier
 * @classID: 313
 * @assignment: #2
-* @version: 2.0
+* @version: 3.0
 * @description: This program performs the various functions of a calculator. (For example: add, subtract, divide, etc.)
 */
 
@@ -15,18 +15,22 @@ public class Calculator {
 	* 
 	* @param total   The total integer value after the arithmetic 
 	*                operations are performed.
+	* @param hist    Keeps track of all arithmetic operations 
+	*                performed.                 
 	*/
 	private int total;
+	private String hist;
 	
 	/**
 	* Constructs a Calculator class when called.
 	*/
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		hist = "0"; 
 	}
 	
 	/**
-	* Displays the value of the total parameter.
+	* Prints and returns the value of the total parameter.
 	*
 	* @return   The total parameter.
 	*/
@@ -36,34 +40,41 @@ public class Calculator {
 	}
 	
 	/**
-	* Adds the integer value to the total parameter.
+	* Adds the integer value to the total parameter and
+	* updates hist.
 	* 
 	* @param value   The value to be added.
 	*/
 	public void add (int value) {
 		total = total + value;
+		hist = hist + " + " + value;
 	}
 	
 	/**
-	* Subtracts the integer value from the total parameter. 
+	* Subtracts the integer value from the total parameter
+	* and updates hist.
 	* 
 	* @param value   The value to be subtracted.
 	*/
 	public void subtract (int value) {
 		total = total - value;
+		hist = hist + " - " + value;
 	}
 	
 	/**
-	* Multiplies the total parameter by the integer value.
+	* Multiplies the total parameter by the integer value
+	* and updates hist.
 	* 
 	* @param value   The value to be multiplied by.
 	*/
 	public void multiply (int value) {
 		total = total * value;
+		hist = hist + " * " + value;
 	}
 	
 	/**
-	* Divides the total parameter by the integer value. 
+	* Divides the total parameter by the integer value and
+	* updates hist. 
 	* 
 	* @param value   The value to be divided by.
 	*/
@@ -75,16 +86,18 @@ public class Calculator {
 		if(value != 0)
 		{
 		total = total / value;
+		hist = hist + " / " + value;
 		}
 	}
 	
 	/**
-	* Returns a string containing all operations performed on the
-	* total parameter. 
+	* Prints and returns a string containing all operations 
+	* performed on the total parameter. 
 	* 
 	* @return   String containing all operations performed.
 	*/
 	public String getHistory () {
+		System.out.println(hist);
 		return "";
 	}
 }
