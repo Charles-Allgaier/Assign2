@@ -2,7 +2,7 @@
 * @author Charles Allgaier
 * @classID: 313
 * @assignment: #2
-* @version: 1.0
+* @version: 2.0
 * @description: This program performs the various functions of a calculator. (For example: add, subtract, divide, etc.)
 */
 
@@ -31,7 +31,8 @@ public class Calculator {
 	* @return   The total parameter.
 	*/
 	public int getTotal () {
-		return 0;
+		System.out.println(total);
+		return total;
 	}
 	
 	/**
@@ -40,7 +41,7 @@ public class Calculator {
 	* @param value   The value to be added.
 	*/
 	public void add (int value) {
-		
+		total = total + value;
 	}
 	
 	/**
@@ -49,7 +50,7 @@ public class Calculator {
 	* @param value   The value to be subtracted.
 	*/
 	public void subtract (int value) {
-		
+		total = total - value;
 	}
 	
 	/**
@@ -58,7 +59,7 @@ public class Calculator {
 	* @param value   The value to be multiplied by.
 	*/
 	public void multiply (int value) {
-		
+		total = total * value;
 	}
 	
 	/**
@@ -67,7 +68,14 @@ public class Calculator {
 	* @param value   The value to be divided by.
 	*/
 	public void divide (int value) {
-		
+		if(value == 0)
+		{
+			total = 0;
+		}
+		if(value != 0)
+		{
+		total = total / value;
+		}
 	}
 	
 	/**
